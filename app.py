@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 
+
 app = Flask(__name__)
+def handler(request):
+    return app(request.scope, request.receive, request.send)
+
 
 # MySQL configuration
 mysql_config = {
